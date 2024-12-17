@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-button" id="chatButton">
+            <div class="chat-button-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                </svg>
+                <span>Chat</span>
+            </div>
+            <div class="notification">1</div>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h3>Chat with Johnson</h3>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="timestamp bold-text">Johnson</div>
+                <br>
+                <div class="message bot">
+                    Hello! Please contact me at 
+                    <a href="mailto:johnsonmarketer@outlook.com">johnsonmarketer@outlook.com</a>
+                    <br>
+                </div>
+            </div>
+            <div class="chat-options">
+                <button class="option-button" onclick="navigateTo('https://www.johnsonmarketer.com')">Back to Home</button>
+                <button class="option-button" onclick="navigateTo('https://projects.johnsonmarketer.com')">Back to Project Checklist</button>
+                <button class="option-button" onclick="navigateTo('https://shortcuts.johnsonmarketer.com')">Back to Shortcuts</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chatButton');
+            const chatContainer = document.getElementById('chatContainer');
+
+            // Toggle chat container visibility
+            chatButton.addEventListener('click', function() {
+                chatContainer.classList.toggle('active');
+            });
+        });
+
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

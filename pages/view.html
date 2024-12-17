@@ -6,7 +6,6 @@
   <title>View Entry</title>
   
   <link rel="stylesheet" href="../css/view.css">
-  <link rel="stylesheet" href="../chat.css">
   <link rel="icon" href="https://raw.githubusercontent.com/Johnson-Frontend/cursor/74fbb9994f7e47dabc67bb20cd294f161bcc2fc0/image/favicon.svg" type="image/svg+xml">
 </head>
 <body data-page="view">
@@ -80,52 +79,6 @@
     <p>&copy; 2024 My Dictionary App</p>
   </footer>
 
-        <!-- Chat widget -->
-<div id="chatContainer"></div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Focus on the input field when the page loads
-        const todoInput = document.getElementById('todo-input');
-        if (todoInput) {
-            todoInput.focus();
-        }
-
-        // Load chat widget HTML
-        fetch('../chat.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('chatContainer').innerHTML = data;
-                // Initialize chat widget functionality
-                const chatButton = document.getElementById('chatButton');
-                const chatContainer = document.querySelector('.chat-container');
-                const closeChat = document.getElementById('closeChat');
-
-                if (chatButton) {
-                    chatButton.addEventListener('click', function() {
-                        chatContainer.classList.toggle('active');
-                        console.log('Chat button clicked, chatContainer active:', chatContainer.classList.contains('active'));
-                    });
-                } else {
-                    console.error('Chat button not found!');
-                }
-
-                if (closeChat) {
-                    closeChat.addEventListener('click', function() {
-                        chatContainer.classList.remove('active');
-                        console.log('Close chat button clicked');
-                    });
-                } else {
-                    console.error('Close chat button not found!');
-                }
-            })
-            .catch(error => console.error('Error loading chat widget:', error));
-    });
-
-    function navigateTo(url) {
-        window.location.href = url;
-    }
-  </script>
 
 
   <script type="module" src="../js/script.js"></script>
